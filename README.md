@@ -2,10 +2,10 @@
 ===========
 
 ## New UI control
-![Screenshot](https://raw.github.com/calvinchankf/Shawbeat_v2/master/img/1.png)
-![Screenshot](https://raw.github.com/calvinchankf/Shawbeat_v2/master/img/2.png)
-![Screenshot](https://raw.github.com/calvinchankf/Shawbeat_v2/master/img/3.png)
-![Screenshot](https://raw.github.com/calvinchankf/Shawbeat_v2/master/img/4.png)
+![Screenshot](https://raw.github.com/calvinchankf/Shawbeat_v2/master/img/thumb1.png)
+![Screenshot](https://raw.github.com/calvinchankf/Shawbeat_v2/master/img/thumb2.png)
+![Screenshot](https://raw.github.com/calvinchankf/Shawbeat_v2/master/img/thumb3.png)
+![Screenshot](https://raw.github.com/calvinchankf/Shawbeat_v2/master/img/thumb4.png)
 
 ## NEW Features
 * Navigation Drawer for listing previous pulished press
