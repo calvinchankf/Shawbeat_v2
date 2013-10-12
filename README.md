@@ -1,5 +1,5 @@
 # Shawbeat v.2
-This version of shawbeat is an update of [old shawbeat](https://github.com/calvinchankf/shawbeat), replaced with new UI control.
+This version of shawbeat is an update of [old version](https://github.com/calvinchankf/shawbeat), replaced with new UI control.
 
 ### New UI control
 ![Screenshot](https://raw.github.com/calvinchankf/Shawbeat_v2/master/img/thumb1.png)
@@ -12,7 +12,7 @@ This version of shawbeat is an update of [old shawbeat](https://github.com/calvi
 * Pull to refresh for navigation drawer list
 * Viewpager UI for each press category
 * Pull to refresh for titles list
-* For other features, please reference to [old shawbeat](https://github.com/calvinchankf/shawbeat)
+* For other features, please reference to [old version](https://github.com/calvinchankf/shawbeat)
 
 ### Cautions
 * Since Facebook SDK always changes, I haven't import Facebook SDK in this project, thus users cannot share content to facebook. If one wants to implement fb share, please use latest fb SDK in your version.
@@ -20,7 +20,7 @@ This version of shawbeat is an update of [old shawbeat](https://github.com/calvi
 
 ***
 
-You may follow [old shawbeat](https://github.com/calvinchankf/shawbeat) to take a reference for using the above two featues.
+You may follow [old version](https://github.com/calvinchankf/shawbeat) to take a reference for using the above two featues.
 
 ### Library used
 * android-support-v7-appcompat
