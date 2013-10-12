@@ -3,12 +3,15 @@ package com.shawbeat;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,11 +27,9 @@ import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.network.DownloadArticle;
-import com.network.DownloadArticleCompleteListener;
 import com.network.DownloadCategory;
-import com.network.DownloadCategoryCompleteListener;
 
-public class ContentFrameFragment extends Fragment implements DownloadCategoryCompleteListener{
+public class ContentFrameFragment extends Fragment implements DownloadCategory.DownloadCategoryCompleteListener{
 	private int ed_id;
 	private ViewPager pager;
 	private CategoryDBHelper categoryDBHelper;
@@ -58,6 +59,14 @@ public class ContentFrameFragment extends Fragment implements DownloadCategoryCo
 		}
 		
 		pager.setAdapter(adapter);
+		
+		Activity at = getActivity();
+		if (at instanceof MainActivity){
+			Log.i("log_tag", "I am instance progress visible");
+			((MainActivity)at).setProgressBarIndeterminateVisible();
+		}else{
+			Log.i("log_tag", "not an instance progress visible");
+		}
 		
 		return view;
 	}
@@ -94,7 +103,7 @@ public class ContentFrameFragment extends Fragment implements DownloadCategoryCo
 	
 	// Instances of this class are fragments representing a single
 	// object in our collection.
-	public static class MyListFragment extends Fragment implements DownloadArticleCompleteListener{
+	public static class MyListFragment extends Fragment implements DownloadArticle.DownloadArticleCompleteListener{
 		private int mEdition_id;
 		private int mCategory_id;
 	    private PullToRefreshListView lv;
@@ -115,6 +124,13 @@ public class ContentFrameFragment extends Fragment implements DownloadCategoryCo
 		    lv.setOnRefreshListener(new OnRefreshListener<ListView>() {
 				@Override
 				public void onRefresh(PullToRefreshBase<ListView> refreshView) {
+					Activity at = getActivity();
+					if (at instanceof MainActivity){
+						Log.i("log_tag", "I am instance progress visible");
+						((MainActivity)at).setProgressBarIndeterminateVisible();
+					}else{
+						Log.i("log_tag", "not an instance progress visible");
+					}
 					new DownloadArticle(MyListFragment.this,getActivity()).execute(mEdition_id, mCategory_id);
 				}
 		    });
@@ -141,8 +157,9 @@ public class ContentFrameFragment extends Fragment implements DownloadCategoryCo
 		    		mTitles.add(a.getTitle());
 		    }
 		    
-		    mAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, mTitles);
+		    mAdapter = new ArrayAdapter<String>(getActivity(), R.layout.mytext, mTitles);
 		    lv.setAdapter(mAdapter);
+		    
 		    new DownloadArticle(MyListFragment.this,getActivity()).execute(mEdition_id, mCategory_id);
 		    
 			return v;
@@ -161,6 +178,13 @@ public class ContentFrameFragment extends Fragment implements DownloadCategoryCo
 				articleDBHelper.insertOrUpdateArticle(s, mEdition_id, mCategory_id);
 			}else{
 				//Toast.makeText(getActivity(), "Network Error", Toast.LENGTH_LONG).show();
+			}
+			Activity at = getActivity();
+			if (at instanceof MainActivity){
+				Log.i("log_tag", "I am instance progress disappear");
+				((MainActivity)at).setProgressBarIndeterminateInvisible();
+			}else{
+				Log.i("log_tag", "not an instance progress disappear");
 			}
 			
 			// Call onRefreshComplete when the list has been refreshed.

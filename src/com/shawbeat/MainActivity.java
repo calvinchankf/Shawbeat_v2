@@ -27,6 +27,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -37,7 +38,6 @@ import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.network.DownloadEdition;
-import com.network.DownloadEditionCompleteListener;
 
 /**
  * This example illustrates a common usage of the DrawerLayout widget
@@ -66,7 +66,7 @@ import com.network.DownloadEditionCompleteListener;
  * An action should be an operation performed on the current contents of the window,
  * for example enabling or disabling a data overlay on top of the current content.</p>
  */
-public class MainActivity extends ActionBarActivity implements DownloadEditionCompleteListener{
+public class MainActivity extends ActionBarActivity implements DownloadEdition.DownloadEditionCompleteListener{
     private DrawerLayout mDrawerLayout;
     private PullToRefreshListView mRefreshDrawerList;
     private ArrayAdapter<String> mAdapter;
@@ -80,6 +80,10 @@ public class MainActivity extends ActionBarActivity implements DownloadEditionCo
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
+        // set up progress bar on actionbar
+        requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
+        
         setContentView(R.layout.activity_main);
 
         // enable ActionBar app icon to behave as action to toggle nav drawer
@@ -219,5 +223,12 @@ public class MainActivity extends ActionBarActivity implements DownloadEditionCo
 		
 		// Call onRefreshComplete when the list has been refreshed.
 		mRefreshDrawerList.onRefreshComplete();
+	}
+	
+	public void setProgressBarIndeterminateVisible(){
+		setProgressBarIndeterminateVisibility(true);
+	}
+	public void setProgressBarIndeterminateInvisible(){
+		setProgressBarIndeterminateVisibility(false);
 	}
 }

@@ -24,6 +24,11 @@ import android.util.Log;
 import com.shawbeat.Article;
 
 public class DownloadArticle {
+	
+	public interface DownloadArticleCompleteListener {
+		void downloadArticleResultCallback(List<Article> s);
+	}
+	
 	private DownloadArticleCompleteListener listener;
 	private Context context;
 	

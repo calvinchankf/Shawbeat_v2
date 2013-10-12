@@ -25,6 +25,11 @@ import com.android.volley.toolbox.Volley;
 import com.shawbeat.Category;
 
 public class DownloadCategory {
+	
+	public interface DownloadCategoryCompleteListener {
+		void DownloadCategoryResultCallback(List<Category> s);
+	}
+	
 	private DownloadCategoryCompleteListener listener;
 	private Context context;
 	

@@ -25,6 +25,10 @@ import com.android.volley.toolbox.Volley;
 import com.shawbeat.Edition;
 
 public class DownloadEdition{
+	public interface DownloadEditionCompleteListener {
+		void downloadEditionResultCallback(List<Edition> s);
+	}
+	
 	private DownloadEditionCompleteListener listener;
 	private Context context;
 	

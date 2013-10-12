@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- the theme applied to the application or activity -->
+    <style name="MyStyle" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+
+        <!-- Support library compatibility -->
+        <item name="actionBarStyle">@style/MyActionBar</item>
+    </style>
+    
+    <style name="MyActionBar" parent="Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="android:indeterminateProgressStyle">@style/MyIndeterminateProgressBar</item>
+        
+        <!-- Support library compatibility -->
+        <item name="indeterminateProgressStyle">@style/MyIndeterminateProgressBar</item>
+    </style>
+    
+    <style name="MyIndeterminateProgressBar" parent="@android:style/Widget.ProgressBar.Large.Inverse">
+        <item name="android:indeterminateDrawable">@drawable/layer_list_ab_indeterminate_progress_bar</item>
+        <item name="android:minWidth">@dimen/ab_indeterminate_progress_bar_size</item>
+        <item name="android:maxWidth">@dimen/ab_indeterminate_progress_bar_size</item>
+        <item name="android:minHeight">@dimen/ab_indeterminate_progress_bar_size</item>
+        <item name="android:maxHeight">@dimen/ab_indeterminate_progress_bar_size</item>
+    </style>
+</resources>
