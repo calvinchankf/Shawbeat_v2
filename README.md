@@ -1,5 +1,5 @@
 # Shawbeat v.2
-This version of shawbeat is an update of [old version](https://github.com/calvinchankf/shawbeat), replaced with new UI control.
+This version of shawbeat is an update of [the old one](https://github.com/calvinchankf/shawbeat), replaced with new UI control.
 
 ### New UI control
 ![Screenshot](https://raw.github.com/calvinchankf/Shawbeat_v2/master/img/thumb1.png)
