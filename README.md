@@ -1,6 +1,9 @@
 # Shawbeat v.2
 This version of shawbeat is an update of [the old one](https://github.com/calvinchankf/shawbeat), replaced with new UI control.
 
+### Caution
+The server is no longer exist, me and my friend decided to end the server due to the end of AWS free tier.
+
 ### New UI control
 ![Screenshot](https://raw.github.com/calvinchankf/Shawbeat_v2/master/img/thumb1.png)
 ![Screenshot](https://raw.github.com/calvinchankf/Shawbeat_v2/master/img/thumb2.png)
